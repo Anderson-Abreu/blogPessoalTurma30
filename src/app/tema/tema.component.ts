@@ -15,6 +15,9 @@ export class TemaComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
+  order: string
+  reverse: boolean
+
   constructor(
     private router: Router,
     private temaService: TemaService,
@@ -28,6 +31,7 @@ export class TemaComponent implements OnInit {
     }
 
     this.findAllTemas()
+    this.setOrder('id')
 
   }
 
@@ -47,4 +51,11 @@ export class TemaComponent implements OnInit {
     })
   }
 
+  setOrder(value: string) {
+    if (this.order == value) {
+      this.reverse = !this.reverse;
+    }
+
+    this.order = value;
+  }
 }

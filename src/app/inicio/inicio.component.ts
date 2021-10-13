@@ -26,6 +26,10 @@ export class InicioComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
+  order: string
+  reverse: boolean
+
+
   constructor(
     private router: Router,
     private postagemService: PostagemService,
@@ -42,6 +46,7 @@ export class InicioComponent implements OnInit {
 
     this.getAllTemas()
     this.getAllPostagens()
+    this.setOrder('id')
   }
 
   getAllTemas(){
@@ -83,4 +88,11 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  setOrder(value: string) {
+    if (this.order == value) {
+      this.reverse = !this.reverse;
+    }
+
+    this.order = value;
+  }
 }

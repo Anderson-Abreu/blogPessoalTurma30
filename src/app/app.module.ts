@@ -19,6 +19,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -44,7 +45,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()  
+    ModalModule.forRoot(),
+    OrderModule  
   ],
   providers: [{
     provide: LocationStrategy,

@@ -43,13 +43,16 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th (click)="setOrder('id')" scope="col">
+                  # <span [hidden]="reverse">▼</span>
+                    <span [hidden]="!reverse">▲</span>
+                </th>
               <th scope="col">Descricao</th>
               <th scope="col" class="text-right">Modificações</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of listaTemas">
+            <tr *ngFor="let item of listaTemas | orderBy: order:reverse">
               <th>{{item.id}}</th>
               <td>{{item.descricao}}</td>
               <td class="d-fles justify-content-end">
